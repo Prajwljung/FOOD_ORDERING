@@ -8,61 +8,68 @@
     <link rel="stylesheet" href="assets/css/style1.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <a href="#Home" class="logo">FOODHUB</a>
-        </div>
 
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="index.php">About</a></li>
-            <!-- <li><a href="#Menu">Menu</a></li> -->
-        </ul> 
-    </nav>
+    <div class="logo-container">
+        <a href="index.php">
+            <img src="assets/images/Food-Plate.png">
+        </a>
+    </div>
     
-    <div class="container">
-        <div class="header">
+    <div class="login-container">
+        <div class="login-form">
             <h2>Register Form</h2>
-        </div>
-
-        <div class="form-body">
             <form action="function/authcode.php" method="post" onsubmit="return validateUserRegister()">
 
-                <div class="name">
+                <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="name" name="name" id="name" placeholder="Enter your name" required onblur="nameValidation('name','nameErr')">
                     <span id="nameErr"></span>
                 </div>
 
-                <div class="email">
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="email" name="email" id="email" placeholder="Enter your email" required
                     onblur="emailValidation('email','emailErr')">
                     <span id="emailErr"></span>
                 </div>
 
-                <div class="password">
+                <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="password" name="password" id="password" placeholder="Enter your password" required
-                    onblur="passwordValidation('password','passwordErr')">
+                    <div class="password">
+                        <input type="password" class="password" name="password" id="password" placeholder="Enter your password" required
+                        onblur="passwordValidation('password','passwordErr')">
+                        <img src="assets/images/eye-close.png" id="eyeicon" onclick="togglePasswordVisibility('password', 'eyeicon')">
+                    </div>
                     <span id="passwordErr" ></span>
                 </div>
 
-                <div class="cpassword">
+                <div class="form-group">
                     <label for="cpassword">Confirm Password</label>
-                    <input type="password" class="cpassword" name="cpassword" id="cpassword" placeholder="Confirm your password" required
-                    onblur="checkPass('cpassword','password','cpassErr')">
+                    <div class="password">
+                        <input type="password" class="cpassword" name="cpassword" id="cpassword" placeholder="Confirm your password" required
+                        onblur="checkPass('cpassword','password','cpassErr')">
+                        <img src="assets/images/eye-close.png" id="eyeicon2" onclick="togglePasswordVisibility('cpassword', 'eyeicon2')" >
+                    </div>
                     <span id="cpassErr"></span>
                 </div>
 
-                <div class="button">
-                    <button type="submit" name="register_btn">Register</button>
-                </div>
-                <p>Already have an account? <a href="login.php">Login</a></p>
+                <button type="submit" name="register_btn" class="button">Register</button>
+
+                <!-- <p class="forget-password">
+                    <a href="#">Forget password</a>
+                </p> -->
+
+                <p class="register-link">
+                    <a href="login.php">Already have an account? Login</a>
+                </p>
 
             </form>
-            <script src="assets/js/validation.js"></script>
+            
         </div>
     </div>
+    
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/validation.js"></script>
+    
 </body>
 </html>

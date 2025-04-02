@@ -6,46 +6,45 @@
     <title>Login Form</title>
     <link rel="stylesheet" href="assets/css/style1.css">
 </head>
+
+
 <body>
-    <nav>
-        <div class="logo">
-            <a href="#Home" class="logo">FOODHUB</a>
-        </div>
 
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="index.php">About</a></li>
-            <!-- <li><a href="#Menu">Menu</a></li> -->
-        </ul> 
-    </nav>
-    
-    <div class="container">
+    <div class="logo-container">
+        <a href="index.php">
+            <img src="assets/images/Food-Plate.png">
+        </a>
+    </div>
 
-            <div class="header">
-                <h2>Login Form</h2>
-            </div>
+    <div class="login-container">
 
-            <div class="form-body">
-                <form action="function/authcode.php" method="post">
+        <div class="login-form">
+            <h2>Login Form</h2>
+            <form action="function/authcode.php" method="post">
 
-                    <div class="email">
-                        <label for="">Email</label>
-                        <input type="email" name="email" class="email" placeholder="Enter your email" id="email">
-                    </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="email" placeholder="Enter your email" id="email">
+                </div>
 
+                <div class="form-group">
+                    <label for="">Password</label>
                     <div class="password">
-                        <label for="">Password</label>
-                        <input type="password" name="password" class="password" placeholder="Enter your password" id="password">
-                    </div>
+                        <input type="password" class="password" name="password" id="password1" placeholder="Enter your password" required>
+                        <img src="assets/images/eye-close.png" id="eyeicon1" onclick="togglePasswordVisibility('password1', 'eyeicon1')">
+                    </div>      
+                </div>
+              
+                <button type="submit" name="login_btn" class="button">Login</button>
 
-                    <div class="button">
-                        <button type="submit" name="login_btn">Login</button>
-                    </div>
-                    <p>Don't have an account? <a href="register.php">Sign up</a></p>
+            </form>
 
-                </form>
-            </div>
+            <p class="register-link">
+                <a href="register.php">If don't have an account? Signup</a>
+            </p>
+
         </div>
     </div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
